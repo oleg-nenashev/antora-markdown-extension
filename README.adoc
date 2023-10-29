@@ -1,0 +1,45 @@
+= Markdown extension for Antora
+:toc:
+:toc-title: Contents
+
+CAUTION: This is an experimental project, see https://gitlab.com/antora/antora/-/merge_requests/1000[this Antora Merge Request]
+
+When maintaining a large project with many modules and maintainers,
+it's common that many developers opt to using Markdown in their repositories
+for README files and other documentation.
+And that's fine for isolated documentation.
+When building a documentation site on organization level,
+you may want to include these pages into your
+org level documentation implemented in Asciidoc and Antora,
+without forcing your whole organization to switch to Asciidoc.
+The `antora-markdown` extension addresses **this and only this** use-case.
+
+== Disclaimer
+
+This extension is **NOT** designed for building whole documentation sites in Markdown.
+It uses Asciidoc AST as a representation format under the hood,
+and there are conversion overheads and risks.
+Use at your own risk for bigger repositories.
+
+The whole module is tested for GitHub Flavoured Markdown
+and likely to not work smoothly for other flavours.
+
+== Requirements
+
+- NPM 16 or above
+- https://kramdown.gettalong.org/[kramdown] and https://github.com/asciidoctor/kramdown-asciidoc[kramdown-asciidoc] are installed
+- Ruby environment to run all kramdown stuff
+
+== Usage
+
+The module should automatically start detecting all Markdown files once
+the extension is added to `antora-playbook.yml`.
+
+```json
+antora:
+  extensions:
+  - '@antora/markdown-extension'
+```
+
+Note that you will still need to have `antora.yml` in the documentation roots.
+To avoid that, use the https://gitlab.com/antora/antora-collector-extension[Antora Collector Extension]

@@ -1,0 +1,17 @@
+site:
+  title: Antora Docs
+  start_page: root::hello.adoc
+content:
+  sources:
+  - url: .
+    branches: HEAD
+    start_path: site/docs
+
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
+
+antora:
+  extensions:
+  - '@antora/markdown-extension'

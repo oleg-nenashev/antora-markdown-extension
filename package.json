@@ -1,0 +1,54 @@
+{
+    "name": "@antora/markdown-loader",
+    "version": "1.0-alpha",
+    "description": "Loads Markdown content into an Asciidoctor Document object (AST) for use in an Antora documentation pipeline. Inspired by @antora/asciidoc-loader",
+    "license": "MPL-2.0",
+    "author": "Oleg Nenashev",
+    "contributors": [
+      "Oleg Nenashev <o.v.nenashev@gmail.com>"
+    ],
+    "homepage": "TODO",
+    "repository": "TODO",
+    "bugs": {
+      "url": "TODO"
+    },
+    "main": "lib/index.js",
+    "exports": {
+      ".": "./lib/index.js",
+      "./package.json": "./package.json"
+    },
+    "dependencies": {
+      "@antora/antora-loader": "3.2.0-alpha.2",
+      "@antora/logger": "3.2.0-alpha.2",
+      "@antora/user-require-helper": "~2.0",
+      "@asciidoctor/core": "~2.2"
+    },
+    "engines": {
+      "node": ">=16.0.0"
+    },
+    "files": [
+      "lib/"
+    ],
+    "keywords": [
+      "antora",
+      "antora-component",
+      "markdown",
+      "documentation",
+      "static site",
+      "web publishing"
+    ],
+    "scripts": {
+      "build": "npm test",
+      "test": "_mocha",
+      "prepublishOnly": "npx -y downdoc --prepublish",
+      "postpublish": "npx -y downdoc --postpublish"
+    },
+    "devDependencies": {
+        "eslint": "~8.42",
+        "eslint-config-standard": "~17.1",
+        "mocha": "~10.2",
+        "nyc": "~15.1",
+        "prettier-eslint": "~15.0"
+      }
+  }
+  
